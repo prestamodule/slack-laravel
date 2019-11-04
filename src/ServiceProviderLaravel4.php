@@ -49,8 +49,7 @@ class ServiceProviderLaravel4 extends \Illuminate\Support\ServiceProvider
 
         $clientConfigs = $this->app['config']->get('slack::clients');
 
-        foreach ($clientConfigs as $name => $config)
-        {
+        foreach ($clientConfigs as $name => $config) {
             $this->app['slack-'.$name] = $this->app->share(function ($app) use ($config) {
                 $defaults = $this->app['config']->get('slack::defaults');
                 $config = array_merge($defaults, $config);

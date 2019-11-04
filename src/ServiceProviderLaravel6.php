@@ -2,10 +2,13 @@
 
 namespace Razorpay\Slack\Laravel;
 
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
+
 use Razorpay\Slack\Client as Client;
 use GuzzleHttp\Client as Guzzle;
 
-class ServiceProviderLaravel5 extends \Illuminate\Support\ServiceProvider
+class ServiceProviderLaravel6 extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Bootstrap the application events.

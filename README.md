@@ -1,22 +1,30 @@
 # Slack for Laravel
 
-This package allows you to use [Slack for PHP](https://github.com/razorpay/slack) easily and elegantly in your Laravel 4 or 5 app. Read the instructions below to get setup, and then head on over to [Slack for PHP](https://github.com/razorpay/slack) for usage details.
+This package allows you to use [Slack for PHP](https://github.com/razorpay/slack) easily and elegantly in your Laravel 4+ app. Read the instructions below to get setup, and then head on over to [Slack for PHP](https://github.com/razorpay/slack) for usage details.
 
 ## Requirements
 
-Laravel 4 or 5.
+Laravel 4+
 
 ## Installation
 
 You can install the package using the [Composer](https://getcomposer.org/) package manager. You can install it by running this command in your project root:
 
+### If you are using Laravel 5.8+
+
 ```sh
-composer require razorpay/slack-laravel
+composer require prestamodule/slack-laravel "^3.0"
+```
+
+### If you are using Laravel < 5.8
+
+```sh
+composer require prestamodule/slack-laravel "^2.0"
 ```
 
 Then [create an incoming webhook](https://my.slack.com/services/new/incoming-webhook) for each Slack team you'd like to send messages to. You'll need the webhook URL(s) in order to configure this package.
 
-## Laravel 5
+## Laravel >= 5.0
 
 Add the `Razorpay\Slack\Laravel\ServiceProvider` provider to the `providers` array in `config/app.php`:
 
@@ -25,6 +33,8 @@ Add the `Razorpay\Slack\Laravel\ServiceProvider` provider to the `providers` arr
   Razorpay\Slack\Laravel\ServiceProvider::class,
 ],
 ```
+
+## Laravel < 5.8
 
 Then add the facade to your `aliases` array:
 
@@ -91,11 +101,11 @@ Version 2.0 adds support for multiple slack clients. For migrating 1.X to 2.0, n
     'defaults'    =>  [
         // default slack client configuration.
     ],
-    
+
     clients =>  [
         // Additional slack clients configuration
         'client1'   =>  [
-            
+
         ]
     ]
 ]

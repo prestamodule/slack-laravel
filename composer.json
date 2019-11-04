@@ -1,5 +1,5 @@
 {
-    "name": "razorpay/slack-laravel",
+    "name": "prestamodule/slack-laravel",
     "description": "Laravel 4 and 5 integration for the razorpay/slack package, including facades and service providers.",
     "keywords": ["slack", "laravel"],
     "license": "BSD-2-Clause",
@@ -11,6 +11,10 @@
         {
             "name": "Team Razorpay",
             "email": "support@razorpay.com"
+        },
+        {
+            "name": "PrestaModule",
+            "email": "github@presta-module.com"
         }
     ],
     "require": {
@@ -24,5 +28,12 @@
             "Razorpay\\Slack\\Laravel\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Slack": "Razorpay\\Slack\\Laravel\\Facade"
+            }
+        }
+    }
 }
